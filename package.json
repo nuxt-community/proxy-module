@@ -24,9 +24,7 @@
   "files": ["lib"],
   "jest": {
     "testEnvironment": "node",
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
-    "collectCoverageFrom": ["lib", "test"]
+    "collectCoverage": true
   },
   "dependencies": {
     "http-proxy-middleware": "^0.17.4"
