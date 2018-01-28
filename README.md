@@ -2,9 +2,9 @@
 
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/proxy/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/proxy)
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/proxy.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/proxy)
-[![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/proxy.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/proxy)
-[![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/proxy.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/proxy)
-[![Dependencies](https://david-dm.org/nuxt-community/proxy/status.svg?style=flat-square)](https://david-dm.org/nuxt-community/proxy)
+[![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/proxymodule.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/proxy-module)
+[![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/proxy-module.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/proxy-module)
+[![Dependencies](https://david-dm.org/nuxt-community/proxy-module/status.svg?style=flat-square)](https://david-dm.org/nuxt-community/proxy-module)
 [![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
 
 > The one-liner node.js http-proxy middleware solution for Nuxt.js using

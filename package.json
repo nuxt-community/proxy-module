@@ -10,7 +10,7 @@
     }
   ],
   "main": "lib/module.js",
-  "repository": "https://github.com/nuxt-community/proxy",
+  "repository": "https://github.com/nuxt-community/proxy-module",
   "publishConfig": {
     "access": "public"
   },
