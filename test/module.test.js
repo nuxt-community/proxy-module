@@ -1,30 +1,60 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000
-process.env.PORT = process.env.PORT || 5060
-process.env.NODE_ENV = 'production'
-
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt } = require('nuxt')
 const request = require('request-promise-native')
 
 const config = require('./fixture/nuxt.config')
 
-const url = path => `http://localhost:${process.env.PORT}${path}`
+const url = path => `http://localhost:3000${path}`
 const get = path => request(url(path))
 
-describe('basic', () => {
+describe('object mode', () => {
   let nuxt
 
   beforeAll(async () => {
-    nuxt = new Nuxt(config)
-    await new Builder(nuxt).build()
-    await nuxt.listen(process.env.PORT)
+    nuxt = new Nuxt(
+      Object.assign({}, config, {
+        proxy: {
+          '/proxy': url('/api'),
+          '/rewrite': {
+            target: url('/api'),
+            pathRewrite: { '^/rewrite': '' }
+          }
+        }
+      })
+    )
+
+    await nuxt.listen(3000)
   })
 
   afterAll(async () => {
     await nuxt.close()
   })
 
-  test('render', async () => {
-    let html = await get('/')
-    expect(html).toContain('Works!')
+  it('basic', async () => {
+    expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
+  })
+
+  it('pathRewrite', async () => {
+    expect(await get('/rewrite/aaa')).toBe('url:/aaa')
+  })
+})
+
+describe('array mode', () => {
+  let nuxt
+
+  beforeAll(async () => {
+    nuxt = new Nuxt(
+      Object.assign({}, config, {
+        proxy: [url('/api')]
+      })
+    )
+    await nuxt.listen(3000)
+  })
+
+  afterAll(async () => {
+    await nuxt.close()
+  })
+
+  it('basic', async () => {
+    await expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
   })
 })

@@ -7,5 +7,6 @@ module.exports = {
   render: {
     resourceHints: false
   },
-  modules: ['@@']
+  modules: ['@@'],
+  serverMiddleware: ['~/middleware.js']
 }
