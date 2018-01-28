@@ -12,13 +12,21 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
+✨ Do you know that [Axios Module](https://github.com/nuxt-community/axios-module) has built in support for Proxy Module?
+
 ## Features
-- Path rewrites
-- Host based router (useful for staging/test)
-- Logs / Proxy Events
-- WebSockets
-- Auth / Cookie
-- ... and more! (see [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) docs)
+
+✓ Path rewrites
+
+✓ Host based router (useful for staging/test)
+
+✓ Logs / Proxy Events
+
+✓ WebSockets
+
+✓ Auth / Cookie
+
+✓ ...and more! (see [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) docs)
 
 ## Setup
 - Add `@nuxtjs/proxy` dependency using yarn or npm to your project
