@@ -1,7 +1,11 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="1.1.4"></a>
+## 1.1.4 (2018-01-28)
+
+
 
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/nuxt/modules/compare/@nuxtjs/proxy@1.1.2...@nuxtjs/proxy@1.1.3) (2017-11-20)
