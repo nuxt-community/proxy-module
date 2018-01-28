@@ -23,6 +23,7 @@
 ## Setup
 - Add `@nuxtjs/proxy` dependency using yarn or npm to your project
 - Add `@nuxtjs/proxy` to `modules` section of `nuxt.config.js`
+
 ```js
 {
   modules: [
@@ -33,7 +34,8 @@
    ['@nuxtjs/proxy', { pathRewrite: { '^/api' : '/api/v1' } }],
   ]
 }
-````
+```
+
 - Define as many as proxy middleware you want in `proxy` section of  `nuxt.config.js` (See [proxy](#proxy) section below)
 
 ## Options
