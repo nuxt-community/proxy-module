@@ -1,4 +1,4 @@
-const { Nuxt } = require('nuxt')
+const { Nuxt } = require('nuxt-edge')
 const request = require('request-promise-native')
 
 const config = require('./fixture/nuxt.config')
