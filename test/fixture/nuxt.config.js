@@ -8,5 +8,8 @@ module.exports = {
     resourceHints: false
   },
   modules: ['@@'],
-  serverMiddleware: ['~/middleware.js']
+  serverMiddleware: ['~/middleware.js'],
+  proxy: [
+    'http://icanhazip.com'
+  ]
 }
