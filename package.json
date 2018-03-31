@@ -30,7 +30,7 @@
     "collectCoverage": true
   },
   "dependencies": {
-    "consola": "^1.1.1",
+    "consola": "^1.1.4",
     "http-proxy-middleware": "^0.18.0"
   },
   "devDependencies": {
@@ -45,7 +45,7 @@
     "eslint-plugin-vue": "^4.4.0",
     "jest": "^22.4.3",
     "jsdom": "^11.6.2",
-    "nuxt-edge": "2.0.0-25375287.923164e",
+    "nuxt-edge": "2.0.0-25375479.ba18127",
     "standard-version": "latest"
   }
 }
