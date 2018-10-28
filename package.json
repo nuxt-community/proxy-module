@@ -30,7 +30,7 @@
     "collectCoverage": true
   },
   "dependencies": {
-    "consola": "^1.1.4",
+    "consola": "^1.4.4",
     "http-proxy-middleware": "^0.18.0"
   },
   "devDependencies": {
