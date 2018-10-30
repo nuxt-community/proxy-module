@@ -20,28 +20,6 @@ describe('warnings', () => {
     await nuxt.close()
   })
 
-  it('spa mode', async () => {
-    nuxt = new Nuxt(
-      Object.assign({}, config, {
-        render: {
-          ssr: false
-        },
-        proxy: {
-          '/proxy': url('/api'),
-          '/rewrite': {
-            target: url('/api'),
-            pathRewrite: { '^/rewrite': '' }
-          }
-        }
-      })
-    )
-    await nuxt.listen(3000)
-
-    const messageInExtendFunction = 'This module does only work in SSR mode'
-    const consolaMessages = log.mock.calls.map(c => c[0].message)
-    expect(consolaMessages).toContain(messageInExtendFunction)
-  })
-
   it('generate', async () => {
     nuxt = new Nuxt(
       Object.assign({}, config, {
@@ -61,7 +39,7 @@ describe('warnings', () => {
     await generator.initiate()
     await generator.initRoutes()
 
-    const messageInExtendFunction = 'This module does only work in SSR mode'
+    const messageInExtendFunction = 'This module does not work in generated mode'
     const consolaMessages = log.mock.calls.map(c => c[0].message)
     expect(consolaMessages).toContain(messageInExtendFunction)
   }, 30000)
