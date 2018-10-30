@@ -28,6 +28,8 @@
 
 ✓ ...and more! (see [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) docs)
 
+⚠ Does not work in generated/static mode!
+
 ## Setup
 - Add `@nuxtjs/proxy` dependency using yarn or npm to your project
 - Add `@nuxtjs/proxy` to `modules` section of `nuxt.config.js`
