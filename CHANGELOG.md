@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/nuxt-community/proxy-module/compare/v1.3.0...v1.3.1) (2018-10-30)
+
+
+### Bug Fixes
+
+* add hint for "universal" mode only ([#10](https://github.com/nuxt-community/proxy-module/issues/10)) ([c78b122](https://github.com/nuxt-community/proxy-module/commit/c78b122))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/nuxt-community/proxy-module/compare/v1.2.4...v1.3.0) (2018-10-29)
 
