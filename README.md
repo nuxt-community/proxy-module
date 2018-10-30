@@ -28,6 +28,8 @@
 
 ✓ ...and more! (see [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) docs)
 
+⚠ Only working when using Nuxt in `ssr`/`universal` mode
+
 ## Setup
 - Add `@nuxtjs/proxy` dependency using yarn or npm to your project
 - Add `@nuxtjs/proxy` to `modules` section of `nuxt.config.js`
