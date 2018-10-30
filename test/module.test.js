@@ -26,6 +26,9 @@ describe('warnings', () => {
         render: {
           ssr: false
         },
+        build: {
+          quiet: false
+        },
         proxy: {
           '/proxy': url('/api'),
           '/rewrite': {
