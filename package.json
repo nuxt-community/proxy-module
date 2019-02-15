@@ -30,12 +30,12 @@
     "collectCoverage": true
   },
   "dependencies": {
-    "consola": "^2.4.0",
+    "consola": "^2.4.1",
     "http-proxy-middleware": "^0.19.1"
   },
   "devDependencies": {
     "codecov": "latest",
-    "eslint": "^5.13.0",
+    "eslint": "^5.14.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jest": "^21.27.2",
