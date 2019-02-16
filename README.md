@@ -1,14 +1,13 @@
 # Proxy Module
 
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/proxy/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/proxy)
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/proxy.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/proxy)
-[![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/proxy-module.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/proxy-module)
-[![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/proxy-module.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/proxy-module)
-[![Dependencies](https://david-dm.org/nuxt-community/proxy-module/status.svg?style=flat-square)](https://david-dm.org/nuxt-community/proxy-module)
-[![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Codecov][codecov-src]][codecov-href]
+[![Dependencies][david-dm-src]][david-dm-href]
+[![Standard JS][standard-js-src]][standard-js-href]
 
-> The one-liner node.js http-proxy middleware solution for Nuxt.js using
- [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware)
+> The one-liner node.js http-proxy middleware solution for Nuxt.js using [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware).
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
@@ -31,8 +30,10 @@
 ⚠ Does not work in generated/static mode!
 
 ## Setup
-- Add `@nuxtjs/proxy` dependency using yarn or npm to your project
-- Add `@nuxtjs/proxy` to `modules` section of `nuxt.config.js`
+
+1. Add `@nuxtjs/proxy` dependency with `yarn` or `npm` into your project
+2. Add `@nuxtjs/proxy` to `modules` section of `nuxt.config.js`
+3. Configure it:
 
 ```js
 {
@@ -49,14 +50,17 @@
 - Define as many as proxy middleware you want in `proxy` section of  `nuxt.config.js` (See [proxy](#proxy) section below)
 
 ## Options
+
 - `changeOrigin` and `ws` options are enabled by default.
 
 [optional] You can provide default options to all proxy targets by passing options to module options.
 
 ## `proxy`
+
 You can provide proxy config using either object or array.
 
 ### Array mode
+
 You can use magic [shorthands](https://github.com/chimurai/http-proxy-middleware#shorthand)
 
 ```js
@@ -75,6 +79,7 @@ You can use magic [shorthands](https://github.com/chimurai/http-proxy-middleware
 ```
 
 ### Object mode
+
 Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-matching)
 
 ```js
@@ -89,9 +94,33 @@ Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-mat
 }
 ```
 
+## Development
+
+1. Clone this repository
+2. Install dependencies using `yarn install` or `npm install`
+3. Start development server using `npm run dev`
 
 ## License
 
 [MIT License](./LICENSE)
 
 Copyright (c) Nuxt Community - Pooya Parsa <pooya@pi0.ir>
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/proxy.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/proxy
+
+[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/proxy/latest.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/proxy
+
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/proxy-module.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/proxy-module
+
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/proxy-module.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/proxy-module
+
+[david-dm-src]: https://david-dm.org/nuxt-community/proxy-module/status.svg?style=flat-square
+[david-dm-href]: https://david-dm.org/nuxt-community/proxy-module
+
+[standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
+[standard-js-href]: https://standardjs.com

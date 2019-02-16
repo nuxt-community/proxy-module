@@ -1,14 +1,18 @@
+jest.setTimeout(60000)
+
 const { Nuxt, Generator, Builder } = require('nuxt-edge')
+const request = require('request-promise-native')
 const consola = require('consola')
 
-const request = require('request-promise-native')
 const config = require('./fixture/nuxt.config')
+config.dev = false
+
+let nuxt
 
 const url = path => `http://localhost:3000${path}`
 const get = path => request(url(path))
 
 describe('warnings', () => {
-  let nuxt
   let log
 
   beforeEach(() => {
@@ -20,7 +24,7 @@ describe('warnings', () => {
     await nuxt.close()
   })
 
-  it('generate', async () => {
+  test('generate', async () => {
     nuxt = new Nuxt(
       Object.assign({}, config, {
         render: {
@@ -42,15 +46,13 @@ describe('warnings', () => {
     await generator.initiate()
     await generator.initRoutes()
 
-    const messageInExtendFunction = 'This module does not work in generated mode'
+    const messageInExtendFunction = 'The module `@nuxtjs/proxy` does not work in generated mode.'
     const consolaMessages = log.mock.calls.map(c => c[0].message)
     expect(consolaMessages).toContain(messageInExtendFunction)
-  }, 30000)
+  })
 })
 
 describe('object mode', () => {
-  let nuxt
-
   beforeAll(async () => {
     nuxt = new Nuxt(
       Object.assign({}, config, {
@@ -71,7 +73,7 @@ describe('object mode', () => {
     await nuxt.close()
   })
 
-  it('basic', async () => {
+  test('basic', async () => {
     expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
   })
 
@@ -81,8 +83,6 @@ describe('object mode', () => {
 })
 
 describe('array mode', () => {
-  let nuxt
-
   beforeAll(async () => {
     nuxt = new Nuxt(
       Object.assign({}, config, {
@@ -96,7 +96,7 @@ describe('array mode', () => {
     await nuxt.close()
   })
 
-  it('basic', async () => {
+  test('basic', async () => {
     await expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
   })
 })
