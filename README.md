@@ -7,7 +7,7 @@
 [![Dependencies][david-dm-src]][david-dm-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 
-> The one-liner node.js http-proxy middleware solution for Nuxt.js using [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware).
+> The one-liner node.js http-proxy middleware solution for Nuxt.js using [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware)
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
