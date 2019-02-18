@@ -24,7 +24,7 @@ describe('warnings', () => {
     await nuxt.close()
   })
 
-  test('generate', async () => {
+  test.skip('generate', async () => {
     nuxt = new Nuxt(
       Object.assign({}, config, {
         render: {
