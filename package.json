@@ -21,7 +21,7 @@
     "lib"
   ],
   "dependencies": {
-    "consola": "^2.4.1",
+    "consola": "^2.5.1",
     "http-proxy-middleware": "^0.19.1"
   },
   "devDependencies": {
