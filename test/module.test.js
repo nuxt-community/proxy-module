@@ -14,17 +14,26 @@ consola.mockTypes(() => jest.fn())
 const url = path => `http://localhost:3000${path}`
 const get = path => request(url(path))
 
-describe('warnings', () => {
+const setupNuxt = async (config) => {
+  const nuxt = new Nuxt(config)
+  await nuxt.listen(3000)
+
+  return nuxt
+}
+
+describe('module', () => {
   beforeEach(() => {
     consola.warn.mockClear()
   })
 
   afterEach(async () => {
-    await nuxt.close()
+    if (nuxt) {
+      await nuxt.close()
+    }
   })
 
   test('generate universal mode', async () => {
-    nuxt = new Nuxt({
+    nuxt = await setupNuxt({
       ...config,
       render: {
         ssr: false
@@ -49,7 +58,7 @@ describe('warnings', () => {
   })
 
   test('generate spa mode', async () => {
-    nuxt = new Nuxt({
+    nuxt = await setupNuxt({
       ...config,
       mode: 'spa',
       build: {
@@ -63,11 +72,9 @@ describe('warnings', () => {
 
     expect(consola.warn).not.toHaveBeenCalled()
   })
-})
 
-describe('object mode', () => {
-  beforeAll(async () => {
-    nuxt = new Nuxt({
+  test('object mode', async () => {
+    nuxt = await setupNuxt({
       ...config,
       proxy: {
         '/proxy': url('/api'),
@@ -78,25 +85,12 @@ describe('object mode', () => {
       }
     })
 
-    await nuxt.listen(3000)
-  })
-
-  afterAll(async () => {
-    await nuxt.close()
-  })
-
-  test('basic', async () => {
     expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
-  })
-
-  test('pathRewrite', async () => {
     expect(await get('/rewrite/aaa')).toBe('url:/aaa')
   })
-})
 
-describe('array mode', () => {
-  beforeAll(async () => {
-    nuxt = new Nuxt({
+  test('array mode', async () => {
+    nuxt = await setupNuxt({
       ...config,
       proxy: [
         url('/api'),
@@ -104,33 +98,15 @@ describe('array mode', () => {
       ]
     })
 
-    await nuxt.listen(3000)
-  })
-
-  afterAll(async () => {
-    await nuxt.close()
-  })
-
-  test('basic', async () => {
     await expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
   })
-})
 
-describe('disabled', () => {
-  beforeAll(async () => {
-    nuxt = new Nuxt({
+  test('disabled', async () => {
+    nuxt = await setupNuxt({
       ...config,
       proxy: false
     })
 
-    await nuxt.listen(3000)
-  })
-
-  afterAll(async () => {
-    await nuxt.close()
-  })
-
-  test('basic', async () => {
     await expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
   })
 })
