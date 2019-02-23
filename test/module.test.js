@@ -5,6 +5,7 @@ const request = require('request-promise-native')
 const consola = require('consola')
 
 const config = require('./fixture/nuxt.config')
+config.dev = false
 
 let nuxt
 
