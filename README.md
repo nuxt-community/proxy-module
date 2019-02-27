@@ -39,10 +39,10 @@
 {
   modules: [
     // Simple usage
-   '@nuxtjs/proxy',
+    '@nuxtjs/proxy',
 
-   // With options
-   ['@nuxtjs/proxy', { pathRewrite: { '^/api' : '/api/v1' } }],
+    // With options
+    ['@nuxtjs/proxy', { pathRewrite: { '^/api' : '/api/v1' } }]
   ]
 }
 ```
@@ -85,11 +85,11 @@ Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-mat
 ```js
 {
   proxy: {
-      // Simple proxy
-      '/api': 'http://example.com',
+    // Simple proxy
+    '/api': 'http://example.com',
 
-      // With options
-      '/api2': { target: 'http://example.com', ws: false }
+    // With options
+    '/api2': { target: 'http://example.com', ws: false }
   }
 }
 ```
