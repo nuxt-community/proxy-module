@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.3](https://github.com/nuxt-community/proxy-module/compare/v1.3.2...v1.3.3) (2019-03-02)
+
+
+### Bug Fixes
+
+* **module:** generate warn if not SPA and increase coverage ([#31](https://github.com/nuxt-community/proxy-module/issues/31)) ([8baafc9](https://github.com/nuxt-community/proxy-module/commit/8baafc9))
+
+
+
 ## [1.3.2](https://github.com/nuxt-community/proxy-module/compare/v1.3.1...v1.3.2) (2019-02-18)
 
 
