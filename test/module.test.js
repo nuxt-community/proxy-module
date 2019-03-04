@@ -2,14 +2,14 @@ jest.setTimeout(60000)
 
 const { Nuxt, Generator, Builder } = require('nuxt-edge')
 const request = require('request-promise-native')
-const consola = require('consola')
+const logger = require('@/logger')
 
 const config = require('./fixture/nuxt.config')
 config.dev = false
 
 let nuxt
 
-consola.mockTypes(() => jest.fn())
+logger.mockTypes(() => jest.fn())
 
 const url = path => `http://localhost:3000${path}`
 const get = path => request(url(path))
@@ -23,7 +23,7 @@ const setupNuxt = async (config) => {
 
 describe('module', () => {
   beforeEach(() => {
-    consola.warn.mockClear()
+    logger.warn.mockClear()
   })
 
   afterEach(async () => {
@@ -54,7 +54,7 @@ describe('module', () => {
     await generator.initiate()
     await generator.initRoutes()
 
-    expect(consola.warn).toHaveBeenNthCalledWith(1, 'The module `@nuxtjs/proxy` does not work in generated mode.')
+    expect(logger.warn).toHaveBeenCalledWith('The module `@nuxtjs/proxy` does not work in generated mode.')
   })
 
   test('generate spa mode', async () => {
@@ -70,7 +70,7 @@ describe('module', () => {
     await generator.initiate()
     await generator.initRoutes()
 
-    expect(consola.warn).not.toHaveBeenCalled()
+    expect(logger.warn).not.toHaveBeenCalled()
   })
 
   test('object mode', async () => {
@@ -106,6 +106,8 @@ describe('module', () => {
       ...config,
       proxy: false
     })
+
+    expect(logger.warn).toHaveBeenCalledWith('No proxy defined on top level.')
 
     await expect(await get('/proxy/aaa')).toBe('url:/proxy/aaa')
   })
