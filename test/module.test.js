@@ -16,6 +16,7 @@ const get = path => request(url(path))
 
 const setupNuxt = async (config) => {
   const nuxt = new Nuxt(config)
+  await nuxt.ready()
   await nuxt.listen(3000)
 
   return nuxt
