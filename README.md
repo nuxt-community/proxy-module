@@ -89,7 +89,10 @@ Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-mat
     '/api': 'http://example.com',
 
     // With options
-    '/api2': { target: 'http://example.com', ws: false }
+    '/api2': { target: 'http://example.com', ws: false },
+
+    // Proxy to backend unix socket
+    "/api3": {changeOrigin: false, target: {socketPath: "/var/run/http-sockets/backend.sock"}}
   }
 }
 ```
