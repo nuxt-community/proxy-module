@@ -31,9 +31,13 @@
 
 ## Setup
 
-1. Add the `@nuxtjs/proxy` dependency with `yarn` or `npm` to your project
+1. Add `@nuxtjs/proxy` dependency to your project
+
+```bash
+yarn add @nuxtjs/proxy # or npm install @nuxtjs/proxy
+```
+
 2. Add `@nuxtjs/proxy` to the `modules` section of `nuxt.config.js`
-3. Configure it:
 
 ```js
 {
@@ -110,7 +114,7 @@ Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-mat
 
 [MIT License](./LICENSE)
 
-Copyright (c) Nuxt Community - Pooya Parsa <pooya@pi0.ir>
+Copyright (c) Nuxt Community
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/proxy.svg?style=flat-square
