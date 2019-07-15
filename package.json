@@ -30,7 +30,6 @@
     "@nuxtjs/eslint-config": "latest",
     "codecov": "latest",
     "eslint": "latest",
-    "get-port": "latest",
     "husky": "latest",
     "jest": "latest",
     "nuxt-edge": "latest",

@@ -2,7 +2,6 @@ jest.setTimeout(60000)
 
 const { Nuxt, Generator, Builder } = require('nuxt-edge')
 const request = require('request-promise-native')
-const getPort = require('get-port')
 
 const logger = require('../lib/logger')
 logger.mockTypes(() => jest.fn())
@@ -10,16 +9,15 @@ logger.mockTypes(() => jest.fn())
 const config = require('./fixture/nuxt.config')
 config.dev = false
 
-let nuxt, port
+let nuxt
 
-const url = path => `http://localhost:${port}${path}`
+const url = path => `http://localhost:3000${path}`
 const get = path => request(url(path))
 
 const setupNuxt = async (config) => {
   const nuxt = new Nuxt(config)
   await nuxt.ready()
-  port = await getPort()
-  await nuxt.listen(port)
+  await nuxt.listen(3000)
 
   return nuxt
 }
