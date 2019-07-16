@@ -7,7 +7,7 @@
     "Pooya Parsa <pooya@pi0.ir>"
   ],
   "main": "lib/module.js",
-  "repository": "https://github.com/nuxt-community/proxy-module",
+  "repository": "nuxt-community/proxy-module",
   "publishConfig": {
     "access": "public"
   },
