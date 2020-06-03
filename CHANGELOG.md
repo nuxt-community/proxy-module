@@ -1,6 +1,23 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.0.0](https://github.com/nuxt-community/proxy-module/compare/v1.3.3...v2.0.0) (2020-06-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* Bumping major version as http-proxy-middleware may introduce some usage regressions
+
+### Features
+
+* bump to 2.x ([57eb492](https://github.com/nuxt-community/proxy-module/commit/57eb492c42cea6b6e90e4348065da308274fbc8a))
+* upgrade to `http-proxy-middleware` 1.0.1 ([0277f6d](https://github.com/nuxt-community/proxy-module/commit/0277f6d0c753a73b2b4ab15223c1a5f9da0085ca))
+
+
+### Bug Fixes
+
+* **module:** use logger ([#40](https://github.com/nuxt-community/proxy-module/issues/40)) ([6bfbcad](https://github.com/nuxt-community/proxy-module/commit/6bfbcade52c364647c26084eb66a16ff6a7c7e11))
 
 ## [1.3.3](https://github.com/nuxt-community/proxy-module/compare/v1.3.2...v1.3.3) (2019-03-02)
 
