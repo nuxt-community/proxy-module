@@ -1,4 +1,5 @@
 const { resolve } = require('path')
+const proxyModule = require('../..')
 
 module.exports = {
   rootDir: resolve(__dirname, '../..'),
@@ -8,9 +9,11 @@ module.exports = {
     resourceHints: false
   },
   modules: [
-    { handler: require('../../') }
+    proxyModule
   ],
-  serverMiddleware: ['~/middleware.js'],
+  serverMiddleware: [
+    require('./middleware')
+  ],
   proxy: [
     'http://icanhazip.com'
   ]
