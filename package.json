@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/proxy",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "The one-liner node.js http-proxy middleware solution for Nuxt.js using http-proxy-middleware",
   "license": "MIT",
   "contributors": [

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/nuxt-community/proxy-module/compare/v2.0.0...v2.0.1) (2020-07-16)
+
+
+### Bug Fixes
+
+* skip module for nuxt build (fixes [#74](https://github.com/nuxt-community/proxy-module/issues/74)) ([50db85e](https://github.com/nuxt-community/proxy-module/commit/50db85eb5dd76dd20fe146b282cc082de721663f))
+
 ## [2.0.0](https://github.com/nuxt-community/proxy-module/compare/v1.3.3...v2.0.0) (2020-06-03)
 
 
