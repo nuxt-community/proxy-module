@@ -21,8 +21,8 @@
     "lib"
   ],
   "dependencies": {
-    "consola": "^2.14.0",
-    "http-proxy-middleware": "^1.0.5"
+    "consola": "^2.15.0",
+    "http-proxy-middleware": "^1.0.6"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
