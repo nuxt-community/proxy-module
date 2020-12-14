@@ -2,15 +2,12 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Circle CI][circle-ci-src]][circle-ci-href]
-[![Codecov][codecov-src]][codecov-href]
-[![License][license-src]][license-href]
+[![codecov][codecov-src]][codecov-href]
+[![license][license-src]][license-href]
 
-> The one-liner node.js http-proxy middleware solution for Nuxt.js using [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware)
+> Proxy support for nuxt server
 
 [📖 **Release Notes**](./CHANGELOG.md)
-
-✨ Do you know that [Axios Module](https://github.com/nuxt-community/axios-module) has built in support for Proxy Module?
 
 ## Features
 
@@ -24,7 +21,7 @@
 
 ✓ Auth / Cookie
 
-✓ ...and more! (see [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) docs)
+✓ ...See [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) docs
 
 ⚠ Does not work in generated/static mode!
 
@@ -62,9 +59,9 @@ yarn add @nuxtjs/proxy # or npm install @nuxtjs/proxy
 
 You can provide proxy config using either object or array.
 
-### Array mode
+### Array Config
 
-You can use magic [shorthands](https://github.com/chimurai/http-proxy-middleware#shorthand)
+You can use [shorthand syntax](https://github.com/chimurai/http-proxy-middleware#shorthand) to configure proxy:
 
 ```js
 {
@@ -81,7 +78,7 @@ You can use magic [shorthands](https://github.com/chimurai/http-proxy-middleware
 }
 ```
 
-### Object mode
+### Object Config
 
 Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-matching)
 
@@ -121,9 +118,6 @@ Copyright (c) Nuxt Community
 
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/proxy.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/proxy
-
-[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/proxy-module.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/nuxt-community/proxy-module
 
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/proxy-module.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/nuxt-community/proxy-module

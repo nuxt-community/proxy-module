@@ -1,20 +1,15 @@
-const { resolve } = require('path')
-const proxyModule = require('../..')
-
-module.exports = {
-  rootDir: resolve(__dirname, '../..'),
-  buildDir: resolve(__dirname, '.nuxt'),
-  srcDir: __dirname,
+export default {
+  createRequire: process.env.TEST ? 'native' : 'jiti',
   render: {
     resourceHints: false
   },
   modules: [
-    proxyModule
+    '../../src/index.ts'
   ],
-  serverMiddleware: [
-    require('./middleware')
-  ],
-  proxy: [
-    'http://icanhazip.com'
-  ]
+  serverMiddleware: {
+    '/_api': '~/api/index'
+  },
+  proxy: {
+    '/example': 'http://example.com'
+  }
 }

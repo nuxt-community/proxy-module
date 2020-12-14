@@ -1,40 +1,36 @@
 {
   "name": "@nuxtjs/proxy",
   "version": "2.0.1",
-  "description": "The one-liner node.js http-proxy middleware solution for Nuxt.js using http-proxy-middleware",
-  "license": "MIT",
-  "contributors": [
-    "Pooya Parsa <pooya@pi0.ir>"
-  ],
-  "main": "lib/module.js",
+  "description": "proxy support for nuxt server",
   "repository": "nuxt-community/proxy-module",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "dev": "nuxt test/fixture",
-    "lint": "eslint --ext .js,.vue lib test",
-    "test": "yarn lint && jest",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish"
-  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
+  "scripts": {
+    "build": "siroc build",
+    "dev": "nuxt test/fixture",
+    "lint": "eslint --ext .js,.vue,.ts .",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
+  },
   "dependencies": {
-    "consola": "^2.14.0",
-    "http-proxy-middleware": "^1.0.5"
+    "http-proxy-middleware": "^1.0.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "latest",
-    "codecov": "latest",
+    "@babel/preset-typescript": "^7.12.7",
+    "@nuxt/test-utils": "latest",
+    "@nuxt/types": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "husky": "latest",
     "jest": "latest",
-    "nuxt-edge": "latest",
-    "request": "latest",
-    "request-promise-native": "latest",
+    "nuxt": "^2.14.11",
+    "siroc": "latest",
     "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
