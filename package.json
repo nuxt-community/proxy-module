@@ -26,7 +26,7 @@
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
     "jest": "latest",
-    "nuxt": "^2.14.11",
+    "nuxt": "^2.14.12",
     "siroc": "latest",
     "standard-version": "latest"
   },
