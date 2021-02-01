@@ -23,7 +23,7 @@
 
 ✓ ...See [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) docs
 
-⚠ Does not work in generated/static mode!
+⚠ Does not work with `nuxt generate` (see [static target](https://nuxtjs.org/docs/2.x/features/deployment-targets#static-hosting)).
 
 ## Setup
 
@@ -39,21 +39,15 @@ yarn add @nuxtjs/proxy # or npm install @nuxtjs/proxy
 {
   modules: [
     // Simple usage
-    '@nuxtjs/proxy',
-
-    // With options
-    ['@nuxtjs/proxy', { pathRewrite: { '^/api' : '/api/v1' } }]
-  ]
+    '@nuxtjs/proxy'
+  ],
+  proxy: {
+    // see Proxy section
+  }
 }
 ```
 
 - Define as many as proxy middleware you want in `proxy` section of  `nuxt.config.js` (See [proxy](#proxy) section below)
-
-## Options
-
-- `changeOrigin` and `ws` options are enabled by default.
-
-[optional] You can provide default options to all proxy targets by passing options to module options.
 
 ## `proxy`
 
@@ -89,7 +83,10 @@ Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-mat
     '/api': 'http://example.com',
 
     // With options
-    '/api2': { target: 'http://example.com', ws: false },
+    '/api2': {
+      target: 'http://example.com',
+      ws: false
+    },
 
     // Proxy to backend unix socket
     '/api3': {
@@ -97,6 +94,39 @@ Keys are [context](https://github.com/chimurai/http-proxy-middleware#context-mat
       target: { socketPath: '/var/run/http-sockets/backend.sock' }
     }
   }
+}
+```
+
+## Default Options
+
+- `changeOrigin` and `ws` options are enabled by default.
+
+You can provide default options to all proxy targets by passing options to module options:
+
+```js
+export default {
+  modules: [
+    // Disable ws option to all proxified endpoints
+    ['@nuxtjs/proxy', { ws: false }]
+  ],
+  proxy: [
+    'http://example.com/foo',
+    'http://example.com:8000/api/books/*/**.json',
+  ]
+}
+```
+
+This will be similar to:
+
+```js
+export default {
+  modules: [
+    '@nuxtjs/proxy',
+  ],
+  proxy: [
+    ['http://example.com/foo', { ws: false }],
+    ['http://example.com:8000/api/books/*/**.json', { ws: false }]
+  ]
 }
 ```
 
