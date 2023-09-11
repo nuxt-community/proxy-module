@@ -9,6 +9,19 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
+## Nuxt 3
+
+In Nuxt 3 you can make use of [Route Rules](https://nitro.unjs.io/guide/routing) to configure your proxies.
+
+```
+export default defineNuxtConfig({
+  routeRules: {
+    '/proxy/example': { proxy: 'https://example.com' },
+    '/proxy/**': { proxy: '/api/**' },
+  }
+})
+```
+
 ## Features
 
 ✓ Path rewrites
