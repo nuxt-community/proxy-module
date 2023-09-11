@@ -5,7 +5,7 @@
 [![codecov][codecov-src]][codecov-href]
 [![license][license-src]][license-href]
 
-> Proxy support for nuxt server
+> Proxy support for Nuxt 2 server
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
