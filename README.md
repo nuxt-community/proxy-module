@@ -13,7 +13,7 @@
 
 In Nuxt 3 you can make use of [Route Rules](https://nitro.unjs.io/guide/routing) to configure your proxies.
 
-```
+```ts
 export default defineNuxtConfig({
   routeRules: {
     '/proxy/example': { proxy: 'https://example.com' },
