@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository is archived. `@nuxtjs/proxy` was built for Nuxt 2, which reached end of life on June 30, 2024. In Nuxt 3+, use [route rules](https://nuxt.com/docs/guide/concepts/rendering) with `proxy`.
+
 # @nuxtjs/proxy
 
 [![npm version][npm-version-src]][npm-version-href]
